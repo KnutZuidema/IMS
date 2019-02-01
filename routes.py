@@ -1,6 +1,6 @@
 from app import app
 from models.user import *
-from flask import render_template
+from flask import render_template, redirect
 
 
 ###########################################
@@ -8,7 +8,12 @@ from flask import render_template
 ###########################################
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return redirect('/signin')
+
+
+@app.route('/signin')
+def signin():
+    return render_template('signin.html')
 
 
 ###########################################
