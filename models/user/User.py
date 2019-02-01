@@ -12,6 +12,7 @@ class User(database.Model):
     surname = database.Column(database.String(64), nullable=False)
     first_name = database.Column(database.String(64), nullable=False)
     email = database.Column(database.String(132), unique=True, nullable=False)
+    password = database.Column(database.String(256), nullable=False)
 
     def __repr__(self):
         return '<User[ID: %r | username: %r]>' % (self.id, self.username)
