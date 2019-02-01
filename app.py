@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from os.path import dirname, abspath, join
 import pymysql
 import configparser
 
@@ -10,8 +11,13 @@ config.read('config.ini')
 # install pymysql as MySQLdb
 pymysql.install_as_MySQLdb()
 
+# setup directories
+ROOT_DIR = dirname(abspath(__file__))
+STATIC_DIR = join(ROOT_DIR, 'static')
+TEMPLATES_DIR = join(ROOT_DIR, 'templates')
+
 # app setup
-app = Flask(__name__)
+app = Flask(__name__, template_folder=TEMPLATES_DIR)
 
 # set flask config
 for key, setting in config['flask'].items():
