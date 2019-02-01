@@ -1,0 +1,27 @@
+main {
+  min-height: 100vh;
+
+  > .sign-in {
+    background: #4D9078;
+    width: 100%;
+    min-height: calc(100vh - 75px);
+    padding-top: 75px;
+
+    > div {
+      background: #FAFAFA;
+      min-height: 200px;
+      width: 450px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      margin: 0 auto;
+      padding: 20px 15px 30px;
+
+      > img {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+
+}
