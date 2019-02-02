@@ -1,3 +1,5 @@
 flask
 flask_sqlalchemy
+flask-wtf
+flask_login
 pymysql
