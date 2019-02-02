@@ -30,9 +30,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://' + str(config['database']['use
 
 # get database
 database = SQLAlchemy(app)
-# run app if main
-if __name__ == "__main__":
-    # import routes
-    from routes import *
-    app.run()
 
+# run app if main and import routes
+if __name__ == "__main__":
+    from routes import *
+    app.run(host=config['ims']['host'], port=config['ims']['port'], debug=config['ims']['debug'])
