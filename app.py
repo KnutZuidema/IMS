@@ -30,7 +30,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://' + str(config['database']['use
 
 # get database
 database = SQLAlchemy(app)
-
 # run app if main
 if __name__ == "__main__":
     app.run()
