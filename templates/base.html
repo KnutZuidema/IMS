@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <!-- favicon and title -->
-    <title>IMS | {% block title %}Website{% endblock %}</title>
+    <title>IMS | {{ title }}</title>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}" sizes="256x256">
 
     <!-- css -->
@@ -19,8 +19,18 @@
     {% block nav %}
     {% endblock %}
 
-    <!-- nav -->
+    <!-- main -->
     <main>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
         {% block main %}
         {% endblock %}
     </main>
