@@ -1,3 +1,16 @@
+/**********************************************************************************************************************
+  TABLE OF CONTENTS
+**********************************************************************************************************************/
+/*
+
+
+  [1] MEDIA QUERIES
+
+
+*/
+/**********************************************************************************************************************
+  [1] MEDIA QUERIES
+**********************************************************************************************************************/
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 html, body {
   width: 100%;
@@ -20,6 +33,21 @@ p {
 .left {
   float: left !important; }
 
+.only {
+  display: none; }
+  @media only screen and (max-width: 600px) {
+    .only.s {
+      display: block; } }
+  @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    .only.m {
+      display: block; } }
+  @media only screen and (min-width: 1000px) and (max-width: 1400px) {
+    .only.l {
+      display: block; } }
+  @media only screen and (min-width: 1400px) {
+    .only.xl {
+      display: block; } }
+
 main {
   min-height: 100vh; }
   main > .sign-in {
@@ -30,10 +58,15 @@ main {
     main > .sign-in > div {
       background: #FAFAFA;
       min-height: 200px;
-      width: 450px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
       margin: 0 auto;
       padding: 20px 15px 30px; }
+      @media only screen and (max-width: 600px) {
+        main > .sign-in > div {
+          width: 90%; } }
+      @media only screen and (min-width: 600px) {
+        main > .sign-in > div {
+          width: 450px; } }
       main > .sign-in > div > img {
         width: 64px;
         height: 64px;
