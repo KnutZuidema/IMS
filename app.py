@@ -33,7 +33,7 @@ database = SQLAlchemy(app)
 
 # run app if main
 if __name__ == "__main__":
+    # import routes
+    from routes import *
     app.run()
 
-# import routes
-from routes import *
