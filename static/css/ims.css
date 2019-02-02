@@ -57,4 +57,31 @@ form input:not([type='checkbox']):not([type='submit']), form textarea {
   form input:not([type='checkbox']):not([type='submit']):hover, form input:not([type='checkbox']):not([type='submit']):focus, form textarea:hover, form textarea:focus {
     border-bottom-color: #4D9078; }
 
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"],
+button,
+.btn {
+  margin-top: 25px;
+  display: block;
+  width: calc(100% - 16px);
+  outline: 0;
+  border: none;
+  color: #FAFAFA;
+  background: #4D9078;
+  padding: 5px 8px;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 300;
+  font-size: 1rem;
+  transition: background 0.1s ease-in; }
+  input[type="button"]:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover,
+  input[type="file"]:hover,
+  button:hover,
+  .btn:hover {
+    cursor: pointer;
+    background: #2E5648; }
+
 /*# sourceMappingURL=ims.css.map */
