@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
+//setup
+@import "variables";
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
+//modules
 @import "modules/reset";
 @import "modules/text";
 @import "modules/main";

@@ -5,3 +5,28 @@
 .left {
   float: left !important;
 }
+
+.only {
+  display: none;
+
+  @media #{$media-only-s}{
+    &.s {
+      display: block;
+    }
+  }
+  @media #{$media-only-m}{
+    &.m {
+      display: block;
+    }
+  }
+  @media #{$media-only-l}{
+    &.l {
+      display: block;
+    }
+  }
+  @media #{$media-only-xl}{
+    &.xl {
+      display: block;
+    }
+  }
+}

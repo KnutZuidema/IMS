@@ -10,10 +10,16 @@ main {
     > div {
       background: #FAFAFA;
       min-height: 200px;
-      width: 450px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
       margin: 0 auto;
       padding: 20px 15px 30px;
+
+      @media #{$media-to-m}{
+        width: 90%;
+      }
+      @media #{$media-m}{
+        width: 450px;
+      }
 
       > img {
         width: 64px;
