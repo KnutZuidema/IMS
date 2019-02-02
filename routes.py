@@ -1,6 +1,7 @@
 from app import app
 from models.user import *
-from flask import render_template, redirect
+from flask import render_template, redirect, flash, url_for
+from forms import *
 
 
 ###########################################
@@ -8,12 +9,16 @@ from flask import render_template, redirect
 ###########################################
 @app.route('/')
 def index():
-    return redirect('/signin')
+    return redirect(url_for('signin'))
 
 
-@app.route('/signin')
+@app.route('/signin', methods=['GET', 'POST'])
 def signin():
-    return render_template('signin.html')
+    form = SignInForm()
+    if form.validate_on_submit():
+        flash('Login requested for email {}, password={}'.format(form.email.data, form.password.data))
+        return redirect(url_for('signin'))
+    return render_template('signin.html', title='Sign In', form=form)
 
 
 ###########################################
