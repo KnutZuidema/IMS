@@ -14,10 +14,27 @@ def index():
 
 @app.route('/signin', methods=['GET', 'POST'])
 def sign_in():
+    # set from
     form = SignInForm()
+
+    # check if from was submit
     if form.validate_on_submit():
+
+        # get selected user by email
+        selected_user = User.query.filter_by(email=form.email.data).first()
+
+        # check if user not exist
+        if selected_user is None:
+
+            # return error and redirect
+            flash('Incorrect access data. Please try again.'.format(form.email.data, form.password.data))
+            return redirect(url_for('sign_in'))
+
+        # return success and redirect
         flash('Login requested for email {}, password={}'.format(form.email.data, form.password.data))
         return redirect(url_for('sign_in'))
+
+    # render template
     return render_template('sign_in.html', title='Sign In', form=form)
 
 
