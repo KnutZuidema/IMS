@@ -48,6 +48,10 @@ p {
     .only.xl {
       display: block; } }
 
+.error {
+  color: #BE0000;
+  font-weight: bold; }
+
 main {
   min-height: 100vh; }
   main > .sign-in {
