@@ -9,16 +9,16 @@ from forms import *
 ###########################################
 @app.route('/')
 def index():
-    return redirect(url_for('signin'))
+    return redirect(url_for('sign_in'))
 
 
 @app.route('/signin', methods=['GET', 'POST'])
-def signin():
+def sign_in():
     form = SignInForm()
     if form.validate_on_submit():
         flash('Login requested for email {}, password={}'.format(form.email.data, form.password.data))
-        return redirect(url_for('signin'))
-    return render_template('signin.html', title='Sign In', form=form)
+        return redirect(url_for('sign_in'))
+    return render_template('sign_in.html', title='Sign In', form=form)
 
 
 ###########################################
